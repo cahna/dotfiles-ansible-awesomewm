@@ -1,0 +1,12 @@
+---
+- name: install awesomewm and its dependencies
+  pacman: name={{ item }} state=installed
+  with_items:
+    - mesa-libgl
+    - xf86-video-vesa
+    - xorg-server
+    - xorg-xinit
+    - awesome
+    - xorg-twm
+    - rlwrap
+    - vicious
