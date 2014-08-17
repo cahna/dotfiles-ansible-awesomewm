@@ -14,7 +14,7 @@
     - awesome
 
 - name: build and install awesomewm with luajit
-  include: aur_package.yml pkg_name=awesome-luajit-git
+  include: aur/pkg.yml pkg_name=awesome-luajit-git
 
 - name: install awesome addons and extensions
   pacman: name={{ item }} state=installed
