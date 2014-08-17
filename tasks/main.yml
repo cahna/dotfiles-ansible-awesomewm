@@ -2,6 +2,7 @@
 - name: install awesomewm package binary and its dependencies
   pacman: name={{ item }} state=installed
   with_items:
+    - luajit
     - mesa-libgl
     - xf86-video-vesa
     - xorg-server
@@ -12,6 +13,9 @@
   pacman: name={{ item }} state=removed
   with_items:
     - awesome
+
+- name: install luajit-lgi (aur dependency of awesomewm)
+  include: aur/pkg.yml pkg_name=luajit-lgi
 
 - name: build and install awesomewm with luajit
   include: aur/pkg.yml pkg_name=awesome-luajit-git
